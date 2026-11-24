@@ -48,6 +48,9 @@ def test_invalid_booking(page: Page, base_url: str):
     expect(page.locator('[data-error-for="participants"]')).to_have_text(
         "В комнате максимум 4 участника."
     )
+    expect(page.locator("#participants")).to_have_css(
+            "border-color", "rgb(186, 63, 63)"
+        )
     expect(page.locator("#form-status")).to_have_text(
         "Проверьте, пожалуйста, заполнение формы."
     )
